@@ -1,6 +1,11 @@
 {% extends 'base/base.html' %}
 {% load staticfiles%}
 {% block content %}
+{% block extrastatic %}
+{% if form %}
+{{form.media}}
+{% endif %}
+{% endblock %}
 
 <form action="" method="post">
  
@@ -58,10 +63,4 @@
 {% endblock%}
 
 	{% block extrajs %}
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
-
 	{% endblock %}
