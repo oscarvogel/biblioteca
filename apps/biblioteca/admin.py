@@ -7,6 +7,7 @@ class AutorAdmin(admin.ModelAdmin):
     search_fields = ('nombre',)
 
 class LibroAdmin(admin.ModelAdmin):
+    search_fields = ('nombre',)
     filter_horizontal = ('autor',)
     
 admin.site.register(Autor, AutorAdmin)

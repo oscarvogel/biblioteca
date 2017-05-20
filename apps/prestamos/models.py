@@ -10,7 +10,7 @@ class Estudiante(models.Model):
     dni 	   = models.CharField(max_length = 8)
     sexo	   = models.CharField(max_length = 1, choices=SEXO)
     direccion  = models.CharField(max_length = 80)
-    fecIngreso = models.DateField(blank=True)
+    fecIngreso = models.DateField(blank=True,verbose_name='Fecha de ingreso')
     reservas   = models.BooleanField(default = False, help_text='Puede realizar reservas')
     prestamos  = models.BooleanField(default = False, help_text='Puede realizar prestamos')
 

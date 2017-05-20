@@ -6,6 +6,7 @@ from apps.prestamos.models import Estudiante, Reserva, Prestamo
 
 class EstudianteAdmin(admin.ModelAdmin):
     search_fields = ('nombre',)
+    list_filter = ('fecIngreso',)
 
 class ReservaAdmin(admin.ModelAdmin):
     search_fields = ('estudiante__nombre',)
