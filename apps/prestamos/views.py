@@ -6,7 +6,7 @@ from apps.prestamos.models import Prestamo
 from apps.prestamos.forms import ListarPrestamosForm
 from django.shortcuts import render
 
-    
+
 def PrestamoList(request):
     prestamos = None
     if request.method == 'POST':

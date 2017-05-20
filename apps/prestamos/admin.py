@@ -17,6 +17,8 @@ class PrestamoAdmin(admin.ModelAdmin):
     search_fields = ('estudiante__nombre','libro__nombre',)
     list_filter = ('fechaPrestamo','estudiante','libro',)
     raw_id_fields = ('libro', 'estudiante',)
+    list_display = ('libro','estudiante','fechaPrestamo','fechaDevolucion')
+    
     
 admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(Reserva, ReservaAdmin)
