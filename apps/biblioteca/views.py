@@ -10,7 +10,7 @@ class LibroListar(ListView):
     model = Libro
     form_class = LibroSearchForm
     template_name = 'biblioteca/libro_list.html'
-    paginate_by = 10
+    paginate_by = 5
     form = None
     object_list = None
     
