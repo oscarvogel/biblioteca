@@ -40,7 +40,7 @@
 		                      		<li class="dropdown">
 		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Libros<span class="caret"></span></a>
 				                        <ul class="dropdown-menu" role="menu">
-				                        	<li><a href="#">Registrar</a></li>
+				                        	<li><a href="{% url 'admin:biblioteca_libro_add' %}">Registrar</a></li>
 				                        	<li><a href="{% url 'biblioteca:libro_listar' %}">Listar</a></li>
 				                        </ul>
 		                      		</li>
@@ -53,8 +53,6 @@
 			                        </li>
 		                    	</ul>
 		                    	<ul class="nav navbar-nav navbar-right">
-		                        	<li class="dropdown"><a href="http://servinlgsm.com.ar" onclick="pageTracker._link(this.href); return false;">Servin LGSM</a>
-		                        	</li>
 		                        	<li class="dropdown">
 		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones<span class="caret"></span></a>
 		                        		<ul class="dropdown-menu" role="menu">
@@ -62,6 +60,11 @@
                                             <li><a href="{% url 'admin:index'%}">Admin</a></li>
 		                        		</ul>
 		                      		</li>
+                                    {% if user.is_authenticated %}
+		                        	<li class="dropdown"><a href="{% url 'logout' %}" >Salir</a>
+		                        	</li>
+                                    {% endif %}
+
 		                    	</ul>
 		                    </div>
 		                </div>

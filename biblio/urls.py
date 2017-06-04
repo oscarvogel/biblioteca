@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.views import login
 from django.conf import settings
+from django.contrib.auth import views as auth_views
+
 admin.site.site_header = settings.ADMIN_SITE_HEADER
 
 urlpatterns = [
@@ -24,4 +26,5 @@ urlpatterns = [
     url(r'^biblioteca/', include('apps.biblioteca.urls', namespace='biblioteca')),
     url(r'^prestamos/', include('apps.prestamos.urls', namespace='prestamos')),
     url(r'^$', login, {'template_name':'index.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
 ]
